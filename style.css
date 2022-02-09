@@ -16,4 +16,8 @@
 }
 h1{
     font-size: 30px;
+
+}
+.word-wrap {
+    word-wrap: break-word;
 }

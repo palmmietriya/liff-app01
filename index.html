@@ -23,11 +23,12 @@
         <li class="list-group-item"><p id="language"><b>Language: </b></p></li>
         <li class="list-group-item"><p id="version"><b>Version: </b></p></li>
         <li class="list-group-item"><p id="isInClient"><b>isInCient: </b></p></li>
-        <li class="list-group-item"><p id="accessToken"><b>Access Token: </b></p></li>
+        <li class="list-group-item word-wrap"><p id="accessToken"><b>Access Token: </b></p></li>
     </ul>
 
 </div>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+
     <script>
         async function getUserProfile(){
             const profile = await liff.getProfile()
