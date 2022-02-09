@@ -9,5 +9,22 @@
 </head>
 <body>
     <h1>Hello Triya</h1>
+    <ul>
+        <li><p id="os"><b>OS: </b></p></li>
+        <li><p id="language"><b>Language: </b></p></li>
+        <li><p id="version"><b>Version:</b></p></li>
+    </ul>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+        function getEnvironment(){
+            document.getElementById("os").append(liff.getOS())
+            document.getElementById("language").append(liff.getLanguage())
+            document.getElementById("version").append(liff.getVersion())
+        }
+        async function main(){
+            await liff.init({liffId :"1656875955-xyD66OAE"})
+            getEnvironment()
+        }
+    </script>
 </body>
 </html>
