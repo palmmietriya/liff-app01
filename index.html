@@ -6,21 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line - Liff App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
     <h1 class="text-center mt-4 md-4">Hello PalmmieTriya</h1>
-    
+    <img id="pictureUrl" src="https://mokmoon.com/images/ic_liff.png" class="rounded-circle">
     <ul class="list-group">
+        <li class="list-group-item active"><h5 class="text-center">User Profile</h5></li>
+        <li class="list-group-item"><p id="UserId"><b>User ID: </b></p></li>
+        <li class="list-group-item"><p id="DisplayeName"><b>DisplayeName: </b></p></li>
+        <li class="list-group-item"><p id="statusMessage"><b>Status: </b></p></li>
+    </ul>
+    <ul class="list-group mt-4">
         <li class="list-group-item"><p id="os"><b>OS: </b></p></li>
         <li class="list-group-item"><p id="language"><b>Language: </b></p></li>
         <li class="list-group-item"><p id="version"><b>Version: </b></p></li>
         <li class="list-group-item"><p id="isInClient"><b>isInCient: </b></p></li>
         <li class="list-group-item"><p id="accessToken"><b>Access Token: </b></p></li>
     </ul>
+
 </div>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+        async function getUserProfile(){
+            const profile = await liff.getProfile()
+            document.getElementById("pictureUrl").src = profile.pictureUrl
+            document.getElementById("userId").append(profile.userId)
+            document.getElementById("displayName").append(profile.displayName)
+            document.getElementById("statusMessage").append(profile.statusMessage)
+        }
+
         function getEnvironment(){
             document.getElementById("os").append(liff.getOS())
             document.getElementById("language").append(liff.getLanguage())
@@ -31,6 +47,8 @@
         async function main(){
             await liff.init({liffId :"1656875955-xyD66OAE"})
             getEnvironment()
+            getUserProfile()
+
         }
         main()
     </script>
