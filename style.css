@@ -20,7 +20,7 @@ h1{
 }
 #accessToken, #userID{
     display: block;
-    height: fit-content;
+  
 }
 
 .word-wrap {
@@ -28,7 +28,7 @@ h1{
 }
 .list-group-item {
     font-size: 14px;
-    height: 40px;
+    height: fit-content;
     padding: 10px;
 }
 .list-group {
