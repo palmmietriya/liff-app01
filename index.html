@@ -17,6 +17,7 @@
         <li class="list-group-item"><p id="userId"><b>User ID: </b></p></li>
         <li class="list-group-item"><p id="displayName"><b>DisplayName: </b></p></li>
         <li class="list-group-item"><p id="statusMessage"><b>Status: </b></p></li>
+        <li class="list-group-item"><p id="email"><b>Email: </b></p></li>
     </ul>
     <ul class="list-group mt-4">
         <li class="list-group-item"><p id="os"><b>OS: </b></p></li>
@@ -24,6 +25,8 @@
         <li class="list-group-item"><p id="version"><b>Version: </b></p></li>
         <li class="list-group-item"><p id="isInClient"><b>isInCient: </b></p></li>
         <li class="list-group-item word-wrap"><p id="accessToken"><b>Access Token: </b></p></li>
+        
+
     </ul>
 
 </div>
@@ -36,6 +39,8 @@
             document.getElementById("userId").append(profile.userId)
             document.getElementById("displayName").append(profile.displayName)
             document.getElementById("statusMessage").append(profile.statusMessage)
+            document.getElementById("email").append(liff.getDecodeIDToken().email)
+            
         }
 
         function getEnvironment(){
