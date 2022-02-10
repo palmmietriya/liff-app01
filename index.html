@@ -21,6 +21,7 @@
     </ul>
     <ul class="list-group mt-4">
         <li class="list-group-item active"><h1 class="text-center">Environment</h1></li>
+        <li class="list-group-item"><p id="isLoggedIn"><b>Login Status: </b></p></li>
         <li class="list-group-item"><p id="os"><b>OS: </b></p></li>
         <li class="list-group-item"><p id="language"><b>Language: </b></p></li>
         <li class="list-group-item"><p id="lineVersion"><b>Line Version: </b></p></li>
@@ -38,6 +39,7 @@
     </ul>
 
 </div>
+
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
     <script> 
@@ -90,6 +92,12 @@
 
         }
         async function main(){
+            liff.ready.then(() =>{
+                document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+                if(lif.isLoggedIn()){
+                        liff.login()
+                }
+            })
             await liff.init({liffId :"1656875955-xyD66OAE"})
             getEnvironment()
             getUserProfile()
