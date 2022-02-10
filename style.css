@@ -25,7 +25,7 @@ h1{
 
 .word-wrap {
     word-wrap: break-word;
-    height: fit-content;
+    height: auto;
 }
 .list-group-item {
     font-size: 14px;
