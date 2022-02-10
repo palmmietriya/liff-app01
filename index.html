@@ -47,6 +47,15 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
     <script> 
+        function sendMsg(){
+            await liff.sendMsg([
+                {
+                    type : "text",
+                    Text : "สวัสดีจ้าาา"
+                }
+            ])
+            alert("Message Sent!")
+        }
 
         function closed() {
             liff.closeWindow()
