@@ -18,7 +18,7 @@ h1{
     font-size: 20px;
 
 }
-#accessToken #userID{
+#accessToken, #userID{
     display: block;
 }
 
