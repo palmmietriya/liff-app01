@@ -29,7 +29,7 @@ h1{
 }
 .list-group-item {
     font-size: 14px;
-    height: 40px;
+    height: fit-content;
     padding: 10px;
 
 }
