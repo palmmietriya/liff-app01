@@ -42,6 +42,14 @@
 
     <script> 
         function getContext(){
+            if (liff.getContext().type === 'external'){
+                document.getElementById("viewType").style.display = 'none'
+                document.getElementById("utouId").style.display = 'none'
+                document.getElementById("groupId").style.display = 'none'
+                document.getElementById("roomId").style.display = 'none'
+
+
+            }
             document.getElementById("type").append(liff.getContext().type)
             document.getElementById("viewType").append(liff.getContext().viewType)
             document.getElementById("utouId").append(liff.getContext().utouId)
