@@ -102,6 +102,11 @@
             document.getElementById("version").append(liff.getVersion())
             document.getElementById("isInClient").append(liff.isInClient())
             document.getElementById("accessToken").append(liff.getAccessToken())
+            if(liff.isInClient()){
+                document.getElementById("btnLogout").style.display = "none"
+            }else{
+                document.getElementById("btnClose").style.display = "none"
+            }
             
 
         }
@@ -109,7 +114,7 @@
             liff.ready.then(() =>{
                 document.getElementById("isLoggedIn").append(liff.isLoggedIn())
                 if(!liff.isLoggedIn()){
-                        liff.login()
+                    liff.login()
                 }
                 
             })
