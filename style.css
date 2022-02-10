@@ -20,6 +20,7 @@ h1{
 }
 #accessToken, #userID{
     display: block;
+    height: fit-content;
 }
 
 .word-wrap {
