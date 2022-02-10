@@ -37,16 +37,26 @@
         <li class="list-group-item" id="ex3"><p id="groupId"><b>Group Id: </b></p></li>
         <li class="list-group-item" id="ex4"><p id="roomId"><b>Room ID: </b></p></li>
     </ul>
-    <button class="btn btn-secondary col-12" id ="btnLogout" onclick="logout()">Logout</button>
-    <button class="btn btn-warning col-12" id="btnClose" onclick="close()">Close Window</button>
+    <div class="mt-4" id="button-section">
+        <button class="btn btn-primary col-12" id ="btnMsg" onclick="sendMsg()">Send Message</button>
+        <button class="btn btn-secondary col-12 mt-2" id ="btnLogout" onclick="logout()">Logout</button>
+        <button class="btn btn-warning col-12 mt-2" id="btnClose" onclick="closed()">Close Window</button>
+    </div>
 </div>
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
     <script> 
+
         function closed() {
             liff.closeWindow()
         }
+
+        function logout(){
+            liff.logout()
+            window.location.reload()
+        }
+
         function getContext(){
             if (liff.getContext().type === 'group'){
                 document.getElementById("ex2").style.display = 'none'
@@ -101,6 +111,7 @@
                 if(!liff.isLoggedIn()){
                         liff.login()
                 }
+                
             })
             await liff.init({liffId :"1656875955-xyD66OAE"})
             getEnvironment()
