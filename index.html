@@ -26,6 +26,9 @@
         <li class="list-group-item"><p id="lineVersion"><b>Line Version: </b></p></li>
         <li class="list-group-item"><p id="type"><b>Room Type: </b></p></li>
         <li class="list-group-item"><p id="viewType"><b>View Type: </b></p></li>
+        <li class="list-group-item"><p id="utouId"><b>utou ID: </b></p></li>
+        <li class="list-group-item"><p id="groupId"><b>Group Id: </b></p></li>
+        <li class="list-group-item"><p id="roomId"><b>Room ID: </b></p></li>
         <li class="list-group-item"><p id="version"><b>Version: </b></p></li>
         <li class="list-group-item"><p id="isInClient"><b>isInCient: </b></p></li>
         <li class="list-group-item word-wrap"><p id="accessToken"><b>Access Token: </b></p></li>
@@ -42,6 +45,10 @@
         function getContext(){
             document.getElementById("type").append(liff.getContext().type)
             document.getElementById("viewType").append(liff.getContext().viewType)
+            document.getElementById("utouId").append(liff.getContext().utouId)
+            document.getElementById("groupId").append(liff.getContext().groupId)
+            document.getElementById("roomId").append(liff.getContext().roomId)
+
 
         }
 
