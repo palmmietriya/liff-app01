@@ -50,8 +50,17 @@
         async function sendMsg(){
             await liff.sendMessages([
                 {
-                    type: "text",
-                    Text: "สวัสดีจ้าาา"
+                    "type": "text",
+                    "Text": "สวัสดีจ้าาา"
+                },
+                {
+                    "type": "text",
+                    "Text": "ปาล์มมี่"
+                },
+                {
+                    "type": "sticker",
+                    "packageID": "6136",
+                    "stickerID":"10551378"
                 }
             ])
             alert("Message Sent!")
