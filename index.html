@@ -20,9 +20,12 @@
         <li class="list-group-item"><p id="email"><b>Email: </b></p></li>
     </ul>
     <ul class="list-group mt-4">
+        <li class="list-group-item active"><h5 class="text-center">Environment</h5></li>
         <li class="list-group-item"><p id="os"><b>OS: </b></p></li>
         <li class="list-group-item"><p id="language"><b>Language: </b></p></li>
         <li class="list-group-item"><p id="lineVersion"><b>Line Version: </b></p></li>
+        <li class="list-group-item"><p id="type"><b>Room Type: </b></p></li>
+        <li class="list-group-item"><p id="viewType"><b>View Type: </b></p></li>
         <li class="list-group-item"><p id="version"><b>Version: </b></p></li>
         <li class="list-group-item"><p id="isInClient"><b>isInCient: </b></p></li>
         <li class="list-group-item word-wrap"><p id="accessToken"><b>Access Token: </b></p></li>
@@ -35,7 +38,13 @@
 </div>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
-    <script>
+    <script> 
+        function getContext(){
+            document.getElementById(type).append(liff.getContext().type)
+            document.getElementById(viewType).append(liff.getContext().viewType)
+
+        }
+
         async function getUserProfile(){
             const profile = await liff.getProfile()
             document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -60,6 +69,7 @@
             await liff.init({liffId :"1656875955-xyD66OAE"})
             getEnvironment()
             getUserProfile()
+            getContext()
 
         }
         main()
