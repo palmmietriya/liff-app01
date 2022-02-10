@@ -18,6 +18,10 @@ h1{
     font-size: 20px;
 
 }
+#accessToken #userID{
+    display: block;
+}
+
 .word-wrap {
     word-wrap: break-word;
 }
