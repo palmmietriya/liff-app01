@@ -42,12 +42,24 @@
 
     <script> 
         function getContext(){
-            if (liff.getContext().type === 'external'){
+            if (liff.getContext().type === 'group'){
+                document.getElementById("ex2").style.display = 'none'
+                document.getElementById("ex4").style.display = 'none'
+            }
+            else if  (liff.getContext().type === 'utou'){
+                document.getElementById("ex3").style.display = 'none'
+                document.getElementById("ex4").style.display = 'none'   
+            }
+            else if  (liff.getContext().type === 'room'){
+                document.getElementById("ex2").style.display = 'none'
+                document.getElementById("ex3").style.display = 'none'   
+            }
+            else{
                 document.getElementById("ex1").style.display = 'none'
                 document.getElementById("ex2").style.display = 'none'
                 document.getElementById("ex3").style.display = 'none'
                 document.getElementById("ex4").style.display = 'none'
-                
+
             }
             document.getElementById("type").append(liff.getContext().type)
             document.getElementById("viewType").append(liff.getContext().viewType)
